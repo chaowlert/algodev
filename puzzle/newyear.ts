@@ -193,7 +193,7 @@ class SingletonIterable implements Iterable<Expression> {
 
 class UnaryIterable implements Iterable<Expression> {
   constructor(private iterator: Iterable<Expression>) {}
-  
+
   *[Symbol.iterator](): Iterator<Expression> {
     for (const node of this.iterator) {
       yield node
@@ -207,7 +207,7 @@ class UnaryIterable implements Iterable<Expression> {
 
 class BinaryIterable implements Iterable<Expression> {
   constructor(private left: Iterable<Expression>, private right: Iterable<Expression>) {}
-  
+
   *[Symbol.iterator](): Iterator<Expression> {
     for (const a of this.left) {
       for (const b of this.right) {
